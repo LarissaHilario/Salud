@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../src/css/inicioSesion.css">
+    <link rel="stylesheet" href="../../src/Bootstrap5/css/bootstrap.css">
+    <script src="../../src/js/register-user.js"></script>
+    <title>Inicio de Sesión</title>
+</head>
+<body>
+    <header>
+        <div class="item" id="principal">
+
+            <nav class="navbar navbar-expand-lg text-bg-main ">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="../../src/html/index.html"><img src="../../src/images/logo-clinica.png" width="100" height="60"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" href="../../src/html/index.html#doctors">Doctores</a>
+                      </li>
+        
+                      <li class="nav-item">
+                        <a class="nav-link" href="../../src/html/index.html#aboutUs">Acerca de nosotros</a>
+                      </li>
+        
+                      <li class="nav-item">
+                        <a class="nav-link" href="../../src/html/index.html#contactUs">Contáctanos</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <button class="btn" type="submit"><a href="../../src/html/login-admi.html">¿Eres un administrador?</a></button>
+                        <button class="btn btn-primary" id="boton"type="submit"> <a href="../../src/html/inicioSesion.html">Inicio de Sesión</a></button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+    <section class="inicioSesion">
+        <h3>Accede a tu cuenta</h3>
+        <br>
+        <input class="controls" type="text" id="user-gived" placeholder="Usuario">
+        <br>
+        <br>
+        <input class="controls" type="password" id="pass-gived" placeholder="Contraseña">
+        <br>
+        <br>
+        <button class="botion-login" id="boton"type="submit" onclick="ingresar()"><!-- <a href="../../src/html/vista-usuario.html"> -->Inicio de Sesión</a></button>
+
+        <a class="contra" href="https://www.youtube.com/watch?v=Ann_CIuEfJw">He olvidado mi contraseña</a>
+        <h5 class="h5-login">¿Todavia sin cuenta?<a class="registro" href="../../src/html/CrearCuenta.html"> Quiero Registrarme</a></h5>
+    </section>
+</body>
+</html>

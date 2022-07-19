@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+body{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),
+    url(../../src/images/Registro.bckg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    }
+    .registro{
+    position: fixed;
+    top: 25%;
+    left: 37%;
+    box-sizing: border-box;
+    width: 400px;
+    height: 450px;
+    background: rgba(251, 251, 251, 0.842);
+    padding: 20px 35px;
+    border-style: solid;
+    border-color: rgba(128, 128, 128, 0.521);
+    border-width: 4px;
+    border-radius: 5px;
+    
+    }
+    .controls{
+        width: 100%;
+        border: 1px solid rgb(255, 255, 255);
+        margin-bottom: 15px;
+        padding: 11px 10px;
+        background: white;
+        font-size: 14px;
+        font-family: 'Roboto Flex';
+        border-radius: 5px;
+      }
+    .boton-register{
+        background: #d4e3fc;
+        position: absolute;
+        top: 64%;
+        cursor: pointer;
+        color: rgb(99, 99, 99);
+        border-radius: 10px;
+        width: 82%;
+        height: 50px;
+        border: 1px solid #d4e3fc;
+        font-size: 20px;
+        font-family: 'Roboto Flex';
+      }
+      h3{
+        font-size: 23px;
+        text-align: center;
+        font-family: 'Antonio';
+      }
+      .acepto{
+        position: absolute;
+        top: 82%;
+        left: 20%;
+        font-size: 11px;
+        text-align: center;
+      }
+      a{
+        color: blue;
+      }
+      .btn a{
+        text-decoration: none;
+    }
+    
+    .btn.btn-primary a{
+        color: white;
+        text-decoration: none;
+    }
+    .terminos{
+        text-decoration: none;
+    }
+    input[type="submit"]:hover{
+      border-color:#9596d2;
+      transition: .5s;
+  }

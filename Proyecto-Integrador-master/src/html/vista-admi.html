@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>administrador</title>
+    <link rel="stylesheet" href="../../src/Bootstrap5/css/bootstrap.css">
+    <link rel="stylesheet" href="../../src/css/vista-admi.css">
+    <script src="https://kit.fontawesome.com/ca99133e94.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="../js/register-med.js"></script>
+  </head>
+<body onload="visualizar()">
+  <header>
+    <div class="item" id="principal">
+
+        <nav class="navbar navbar-expand-lg text-bg-main ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../../src/html/index.html#principal"><img src="../../src/images/logo-clinica.png" width="100" height="60"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../src/html/vista-admi.html">Doctores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="../../src/html/pacientes-admi.html">Citas</a>
+                  </li>
+                  
+                  
+                    <div class="iconocampana">
+                      <a href="">
+                        <i class="fa-solid fa-bell"></i>
+                      </a>
+                    </div>
+                    
+                    <div class="iconousuario">
+                      <a href="../../src/html/index.html">
+                        <i class="fa-solid fa-user"></i>
+                      </a>
+                    </div>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>
+</header>
+
+<main>
+  <br>
+  <br>
+  <br>
+  <div class="registro">
+    <h1>Formulario</h1>
+    <div class="controls">
+    <input type="text" placeholder="Nombre" id="name">
+    <br>
+    <input type="text" placeholder="Apellidos" id="apellidos" >
+    <br>
+    <input type="text" placeholder="Dirección" id="direccion">
+    <br>
+    <input type="email" placeholder="Correo" id="email">
+    <br>
+    <input type="text" placeholder="Telefono" id="tel"></div>
+    <br>
+    <textarea placeholder="Información" id="info"> </textarea></div>
+    <br>
+    <select id="esp" class="select-css">
+      <option >Seleccione una opción</option>
+      <option value="Odontología">Odontología</option>
+      <option value="Cardiología">Cardiología</option>
+      <option value="Nutriologo">Nutriologo</option>
+      <option value="Neorocirujano">Neorocirujano</option>
+      <option value="Psicología">Psicología</option>
+      <option value="Dematología">Dermatología</option>
+      <option value="Nefrología">Nefrología</option>
+    </select>
+    <br>
+    <input accept="image/*" type="file" multiple id="img-doctor">
+    <br>
+    <input id="enviar"type="submit" placeholder="Enviar" class="controls" onclick="registro()">
+  <div id="div">
+    
+  </div>
+
+  
+  <!--  
+  <div class="circulo1">
+    <b>Ángel Clemente</b>
+    <p>Información acerca del doctor:
+      <br><br>
+      El doctor Ángel Clemente esta graduado de la  <br> Universidad Autónoma de Chiapas en la 
+      <br> Especialidad Cardiología. Es uno de los mejores doctores del estado.
+    </p>
+    <h5>Cardiologo</h5>
+    <button class="btn-gestionar"><a href="/gestionarDoctor.html">Gestionar</a></button>
+  </div>
+  <div class="circulo1-1"></div>-->
+  <!-- ******************************* -->
+ <!--  <div class="circulo2">
+    <b>María Robles</b>
+    <p>Información acerca del doctor:
+      <br><br>
+      La doctora María Robles esta graduada de la  <br> Universidad Autónoma de Chiapas en la 
+      <br> Especialidad Psicología. Es una de las mejores doctoras del estado.
+    </p>
+    <h5>Psicóloga</h5>
+    <button class="btn-gestionar2">Gestionar</button>
+  </div>
+  <div class="circulo2-1"></div>--> 
+  <!-- ****************************** -->
+<!--  <div class="circulo3">
+    <h5>Odontologo</h5>
+    <b>Alexis Padrón</b>
+    <p>Información acerca del doctor:
+      <br><br>
+      El doctor Alexis Padrón esta graduado de la  <br> Universidad Autónoma de Chiapas en la 
+      <br> Especialidad Odontología. Es uno de los mejores doctores del estado.
+    </p>
+    <button class="btn-gestionar3">Gestionar</button>
+  </div>
+  <div class="circulo3-1"></div> -->
+  <!-- ******************************* -->
+  <!-- <div class="circulo4">
+    <h5>Nefróloga</h5>
+    <b>Ana Morales</b>
+    <p>Información acerca del doctor:
+      <br><br>
+      La doctora Ana Morales esta graduada de la  <br> Universidad Autónoma de Chiapas en la 
+      <br> Especialidad Nefrología. Es una de las mejores doctoras del estado.
+    </p>
+    <button class="btn-gestionar4">Gestionar</button>  
+  </div>
+  <div class="circulo4-1"></div>-->
+  <!-- ********************************* -->
+  <!--  <div class="circulo5">
+    <h5>Nutrióloga</h5>
+    <b>Sofia García</b>
+    <p>Información acerca del doctor:
+      <br><br>
+      La doctora Sofia García esta graduada de la  <br> Universidad Autónoma de Chiapas en la 
+      <br> Especialidad Nutrióloga. Es una de las mejores doctoras del estado.
+    </p>
+    <button class="btn-gestionar5">Gestionar</button>
+  </div>
+  <div class="circulo5-1"></div>
+  <div class="agregar"><a href="/formulario.html"><i class="fa-solid fa-circle-plus"></i></a></div>
+-->
+
+
+
+</main>
+
+</body>
+</html>

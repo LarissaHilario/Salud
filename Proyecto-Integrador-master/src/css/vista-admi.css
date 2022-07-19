@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
+
+.btn a{
+    text-decoration: none;
+  }
+  
+  .btn.btn-primary a{
+    color: white;
+    text-decoration: none;
+  }
+
+/*GESTION ADMINISTRADOR*/
+
+
+
+.circulo1{
+    align-content: center;
+    background-color: #e8e8e8;
+    width: 1050px;
+    height: 300px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo1-1{
+    
+    background-color: #aaaaaa;
+    width: 220px;
+    height: 240px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo2{
+    position: absolute;
+    left: 10%;
+    top: 75%;
+    background-color: #e8e8e8;
+    width: 1050px;
+    height: 300px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo2-1{
+    position: absolute;
+    left: 13%;
+    top: 78.7%;
+    background-color: #aaaaaa;
+    width: 220px;
+    height: 240px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo3{
+    position: absolute;
+    left: 10%;
+    top: 115%;
+    background-color: #e8e8e8;
+    width: 1050px;
+    height: 300px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo3-1{
+    position: absolute;
+    left: 13%;
+    top: 118.7%;
+    background-color: #aaaaaa;
+    width: 220px;
+    height: 240px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo4{
+    position: absolute;
+    left: 10%;
+    top: 155%;
+    background-color: #e8e8e8;
+    width: 1050px;
+    height: 300px;
+    border-radius: 36px 36px 36px 36px;
+}
+.circulo4-1{
+    position: absolute;
+    left: 13%;
+    top: 158.7%;
+    background-color: #aaaaaa;
+    width: 220px;
+    height: 240px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo5{
+    position: absolute;
+    left: 10%;
+    top: 195%;
+    background-color: #e8e8e8;
+    width: 1050px;
+    height: 300px;
+    border-radius: 36px 36px 36px 36px;
+}
+.circulo5-1{
+   
+    background-color: #aaaaaa;
+    width: 220px;
+    height: 240px;
+    border-radius: 36px 36px 36px 36px; 
+}
+.circulo1 p{
+    align-items: center;
+    font-family: 'Poppins';
+}
+.circulo1 b{
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 19px;
+}
+.circulo1 h5{
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+.btn-gestionar{
+   /* position: absolute;
+    top:80%;
+    left: 67.3%;*/
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular' ;
+    color: white;
+    background-color: #033076;
+}
+.btn-gestionar a{
+    text-decoration: none;
+    color: white;
+}
+    
+
+.circulo2 p{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    font-family: 'Poppins';
+}
+.circulo2 b{
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    font-family: 'Poppins';
+    font-size: 19px;
+}
+.circulo2 h5{
+    position: absolute;
+    left: 35%;
+    top: 55%;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+.btn-gestionar2{
+    position: absolute;
+    top:80%;
+    left: 67.3%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular';
+    color: white;
+    background-color: #033076;
+}
+.circulo3 p{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    font-family: 'Poppins';
+}
+.circulo3 b{
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    font-family: 'Poppins';
+    font-size: 19px;
+}
+.circulo3 h5{
+    position: absolute;
+    left: 34.5%;
+    top: 55%;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+.btn-gestionar3{
+    position: absolute;
+    top:80%;
+    left: 67.3%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular';
+    color: white;
+    background-color: #033076;
+}
+.circulo4 p{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    font-family: 'Poppins';
+}
+.circulo4 b{
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    font-family: 'Poppins';
+    font-size: 19px;
+}
+.circulo4 h5{
+    position: absolute;
+    left: 34.5%;
+    top: 55%;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+.btn-gestionar4{
+    position: absolute;
+    top:80%;
+    left: 67.3%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular';
+    color: white;
+    background-color: #033076;
+}
+.circulo5 p{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    font-family: 'Poppins';
+}
+.circulo5 b{
+    position: absolute;
+    top: 42%;
+    left: 33%;
+    font-family: 'Poppins';
+    font-size: 19px;
+}
+.circulo5 h5{
+    position: absolute;
+    left: 34.5%;
+    top: 55%;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+.btn-gestionar5{
+    position: absolute;
+    top:80%;
+    left: 67.3%;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular';
+    color: white;
+    background-color: #033076;
+}
+.agregar{
+    font-size: 50px;
+    position: absolute;
+    top: 225%;
+    left: 90%;
+}
+.agregar a{
+    color: #033076;
+    text-decoration: none;
+}
+.iconousuario a{
+    position: absolute;
+    left: 96%;
+    top: 35%;
+    font-size: 27px;
+    color: #033076;
+    z-index: 3;
+}
+.iconocampana a{
+    position: absolute;
+    left: 92%;
+    top:35%;
+    font-size: 27px;
+    color: #033076;
+    z-index: 3;
+}
+

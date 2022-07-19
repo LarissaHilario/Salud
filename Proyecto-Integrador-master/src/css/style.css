@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+body{
+    background: url(../../src/images/Background-principal.png);
+    background-size: 100%;
+}
+html{
+    scroll-behavior: smooth;
+    display: subgrid;
+}
+
+.inicio{
+    scroll-margin-top: 1px;
+    background-size: 100%;
+    display: block;
+    height:100vh;
+}
+.doctor{
+    scroll-margin-top: 80px;
+    background-size: 100%;
+    display:flex;
+    height:100vh;
+    z-index: 1;
+}
+
+.about{
+    scroll-margin-top: 150px;
+    background-size: 100%;
+    display:flex;
+    height:100vh;
+}
+.contact{
+    scroll-margin-top: 150px;
+    background-size: 100%;
+    display:flex;
+    height:100vh;
+    font-size: 30px;
+    font-family: 'Roboto Flex';
+    
+}
+.contact h2{
+    font-family: 'Antonio';
+    font-size: 30px;
+    position: absolute;
+    top:2680px;
+    left: 38%;
+}
+.fondoContactanos{
+    position: absolute;
+    top: 2850px;
+    left: 25%;
+}
+
+#apellido{
+    position: absolute;
+    top: 0%;
+    left: 150%;
+}
+#texto-apellido{
+    position: absolute;
+    top: 10%;
+    left: 150%;
+}
+#email{
+    width: 250%;
+}
+#texto-mensaje{
+    width: 250%;
+    height: 300px;
+    
+}
+
+.btn a{
+    text-decoration: none;
+}
+
+.btn.btn-primary a{
+    color: white;
+    text-decoration: none;
+}
+
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imagen-doctora{
+    position: absolute;
+    top: 202px;
+    left:820px;
+    display: block;
+    height: 700px;
+    width: 550px;
+}
+.Fuente-Main{
+position: absolute;
+top: 300px;
+left: 7%;
+text-align: center;
+font-family:'Antonio';
+font-size: 45px;
+color: rgb(48, 46, 46);
+z-index: 1;
+}
+.circulo{
+    position: absolute;
+    left: 700px;
+    top: 190px;
+    background-color: #F7F6F6;
+    width: 700px;
+    height: 700px;
+    border-radius: 360px 360px 360px 360px; 
+}
+.Parrafo-frase{
+    position: absolute;
+    text-align:justify;
+    left: 120px;
+    top:480px;
+    width: 450px;
+    font-family: 'Roboto Flex';
+    font-size: 18px;
+}
+
+.Autor-frase{
+    position: absolute;
+    text-align:right;
+    left: 170px;
+    top:570px;
+    width: 400px;
+    font-family: 'Roboto Flex';
+    font-size: 18px;
+}
+
+.controls{
+    position: absolute;
+    top:640px;
+    left:240px;
+    width: 20%;
+    border: 1px solid #d4e3fc;
+    background: #0d6efd;
+    font-family: 'Roboto Flex';
+    border-radius: 5px;
+    
+  }
+
+  .controls a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  input[type="submit"]{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 17%;
+    height: 50px;
+    border: 1px solid #d4e3fc;
+    font-size: 20px;
+    font-family: 'Roboto Flex';
+  }
+   input[type="submit"]:hover{
+    border-color:#9596d2;
+    transition: .5s;
+}
+
+.Meet-special{
+    position: absolute;
+    left: 510px;
+    top: 930px;
+    font-family: 'Roboto Flex';
+    font-size: 36px;
+
+}
+
+.circulo1{
+    position: absolute;
+    left: 220px;
+    top: 1000px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+    z-index: -1;
+}
+.doctor-1{
+    position: absolute;
+    left: 220px;
+    top: 1000px;
+    height: 250px;
+    width: 500px;
+}
+
+.Nombre-doctor-1{
+    position: absolute;
+    left: 260px;
+    top: 1260px;
+
+}
+
+.Especial-doctor-1{
+    position: absolute;
+    left: 280px;
+    top: 1280px;
+    font-family: 'Roboto Flex';
+
+}
+
+
+.circulo2{
+    position: absolute;
+    left: 470px;
+    top: 1000px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+.doctor-2{
+    position: absolute;
+    left: 510px;
+    top: 1000px;
+    height: 250px;
+    width: 500px;
+}
+
+.Nombre-doctor-2{
+    position: absolute;
+    left: 520px;
+    top: 1260px;
+
+}
+
+.Especial-doctor-2{
+    position: absolute;
+    left: 540px;
+    top: 1280px;
+    font-family: 'Roboto Flex';
+
+}
+
+.circulo3{
+    position: absolute;
+    left: 720px;
+    top: 1000px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+.doctor-3{
+    position: absolute;
+    left: 705px;
+    top: 1006px;
+    height: 245px;
+    width: 500px;
+}
+
+.Nombre-doctor-3{
+    position: absolute;
+    left: 760px;
+    top: 1260px;
+
+}
+
+.Especial-doctor-3{
+    position: absolute;
+    left: 785px;
+    top: 1280px;
+    font-family: 'Roboto Flex';
+
+}
+
+.circulo4{
+    position: absolute;
+    left: 970px;
+    top: 1000px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+
+.doctor-4{
+    position: absolute;
+    left: 970px;
+    top: 1028px;
+    height: 220px;
+    width: 500px;
+}
+
+.Nombre-doctor-4{
+    position: absolute;
+    left: 1020px;
+    top: 1260px;
+
+}
+
+
+.Especial-doctor-4{
+    position: absolute;
+    left: 1035px;
+    top: 1280px;
+    font-family: 'Roboto Flex';
+
+}
+.circulo5{
+    position: absolute;
+    left: 220px;
+    top: 1320px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+
+.doctor-5{
+    position: absolute;
+    left: 220px;
+    top: 1320px;
+    height: 250px;
+    width: 500px;
+}
+
+.Nombre-doctor-5{
+    position: absolute;
+    left: 270px;
+    top: 1580px;
+
+}
+
+.Especial-doctor-5{
+    position: absolute;
+    left: 280px;
+    top: 1600px;
+    font-family: 'Roboto Flex';
+
+}
+
+
+.circulo6{
+    position: absolute;
+    left: 470px;
+    top: 1320px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+.doctor-6{
+    position: absolute;
+    left: 484px;
+    top: 1320px;
+    height: 250px;
+    width: 500px;
+}
+.Nombre-doctor-6{
+    position: absolute;
+    left:515px;
+    top: 1580px;
+
+}
+.Especial-doctor-6{
+    position: absolute;
+    left: 513px;
+    top: 1600px;
+    font-family: 'Roboto Flex';
+
+}
+
+
+
+.circulo7{
+    position: absolute;
+    left: 720px;
+    top: 1320px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+.doctor-7{
+    position: absolute;
+    left: 735px;
+    top: 1320px;
+    height: 250px;
+    width: 500px;
+}
+.Nombre-doctor-7{
+    position: absolute;
+    left: 1020px;
+    top: 1580px;
+
+}
+.Especial-doctor-7{
+    position: absolute;
+    left: 790px;
+    top: 1600px;
+    font-family: 'Roboto Flex';
+
+}
+
+.circulo8{
+    position: absolute;
+    left: 970px;
+    top: 1320px;
+    box-sizing: border-box;
+    background: #f7f6f6;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px; 
+}
+.doctor-8{
+    position: absolute;
+    left: 970px;
+    top: 1320px;
+    height: 250px;
+    width: 500px;
+}
+.Nombre-doctor-8{
+    position: absolute;
+    left: 780px;
+    top: 1580px;
+
+}
+.Especial-doctor-8{
+    position: absolute;
+    left: 1050px;
+    top: 1600px;
+    font-family: 'Roboto Flex';
+
+}
+
+
+.logo{
+    width: 80px;
+    position: relative;
+    left:670px;
+    top: 7px;
+}
+
+.subtitle{
+    color:#9596d2;
+    text-align: center;
+    font-family:'Antonio';
+    position: relative;
+    left:-20px;
+    font-size: 22px;
+
+}
+
+.parrafos{
+    display: flex;
+    text-align: justify;
+    position: relative;
+    left:-20px;
+    font-size: 14px;
+    font-family: 'Roboto Flex';
+}
+
+
+.parrafo1{
+    margin: 0px 25px;
+    padding-left: 350px;
+}
+.parrafo2{
+    margin: 0px 25px;
+    padding-right: 350px;
+}
+
+.cuadrados{
+ display: flex;
+ padding-left: 270px;
+ text-overflow: ellipsis;
+
+}
+.cuadrado1{
+    position: relative;
+    left:-50px;
+    margin: 0px 25px;
+    width: 250px;
+    height: 250px;
+    color: azure;
+    padding: 10px;
+    background-color: #0d6efd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cuadrado2{
+    position: relative;
+    left: -20px;
+    margin: 0px 25px;
+    color: azure;
+    padding: 10px;
+    background-color: #36cfbb;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    text-size-adjust: 30px;
+    border-radius: 10px;
+    
+}
+.cuadrado3{
+    position: relative;
+    left:10px;
+    margin: 0px 25px;
+    color: azure;
+    padding: 10px;
+    background-color: #1a2130;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+   
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 1000,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+
+
+
+
+

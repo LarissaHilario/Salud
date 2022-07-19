@@ -1,0 +1,24 @@
+.iconousuario a{
+    position: absolute;
+    left: 96%;
+    top: 35%;
+    font-size: 27px;
+    color: #033076;
+    z-index: 3;
+}
+.iconocampana a{
+    position: absolute;
+    left: 92%;
+    top:35%;
+    font-size: 27px;
+    color: #033076;
+    z-index: 3;
+}
+
+.status-user{
+    color: green;
+}
+
+.status-user-i{
+    color: rgb(128, 15, 0);
+}
