@@ -250,7 +250,7 @@ combobox1.addEventListener("change", (e) => {
 
 
 
- function visualizarCitas(){
+ /*function visualizarCitas(){
     $query=`Select *from citasb;`;
     var tablaR=document.getElementById("Tabla");
     conexion.query($query,function(err,rows){
@@ -296,4 +296,4 @@ combobox1.addEventListener("change", (e) => {
   }
   function refrescar(){
   location.reload();
-  }
+  }*/

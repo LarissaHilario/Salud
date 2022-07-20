@@ -50,42 +50,13 @@
   <br>
   <br>
   <br>
-  <div class="registro">
-    <h1>Formulario</h1>
-    <div class="controls">
-    <input type="text" placeholder="Nombre" id="name">
-    <br>
-    <input type="text" placeholder="Apellidos" id="apellidos" >
-    <br>
-    <input type="text" placeholder="Dirección" id="direccion">
-    <br>
-    <input type="email" placeholder="Correo" id="email">
-    <br>
-    <input type="text" placeholder="Telefono" id="tel"></div>
-    <br>
-    <textarea placeholder="Información" id="info"> </textarea></div>
-    <br>
-    <select id="esp" class="select-css">
-      <option >Seleccione una opción</option>
-      <option value="Odontología">Odontología</option>
-      <option value="Cardiología">Cardiología</option>
-      <option value="Nutriologo">Nutriologo</option>
-      <option value="Neorocirujano">Neorocirujano</option>
-      <option value="Psicología">Psicología</option>
-      <option value="Dematología">Dermatología</option>
-      <option value="Nefrología">Nefrología</option>
-    </select>
-    <br>
-    <input accept="image/*" type="file" multiple id="img-doctor">
-    <br>
-    <input id="enviar"type="submit" placeholder="Enviar" class="controls" onclick="registro()">
-  <div id="div">
-    
-  </div>
+  
 
   
-  <!--  
-  <div class="circulo1">
+    <div id="div">
+
+    </div>
+<!--   <div class="circulo1">
     <b>Ángel Clemente</b>
     <p>Información acerca del doctor:
       <br><br>
@@ -93,11 +64,11 @@
       <br> Especialidad Cardiología. Es uno de los mejores doctores del estado.
     </p>
     <h5>Cardiologo</h5>
-    <button class="btn-gestionar"><a href="/gestionarDoctor.html">Gestionar</a></button>
+    <button class="btn-gestionar"><a href="../html/modificarDoctor.html">Gestionar</a></button>
   </div>
-  <div class="circulo1-1"></div>-->
-  <!-- ******************************* -->
- <!--  <div class="circulo2">
+  <div class="circulo1-1"></div>
+ 
+  <div class="circulo2">
     <b>María Robles</b>
     <p>Información acerca del doctor:
       <br><br>
@@ -105,11 +76,11 @@
       <br> Especialidad Psicología. Es una de las mejores doctoras del estado.
     </p>
     <h5>Psicóloga</h5>
-    <button class="btn-gestionar2">Gestionar</button>
+    <button class="btn-gestionar2"><a href="../html/modificarDoctor.html">Gestionar</a></button>
   </div>
-  <div class="circulo2-1"></div>--> 
-  <!-- ****************************** -->
-<!--  <div class="circulo3">
+  <div class="circulo2-1"></div>
+  
+  <div class="circulo3">
     <h5>Odontologo</h5>
     <b>Alexis Padrón</b>
     <p>Información acerca del doctor:
@@ -117,11 +88,11 @@
       El doctor Alexis Padrón esta graduado de la  <br> Universidad Autónoma de Chiapas en la 
       <br> Especialidad Odontología. Es uno de los mejores doctores del estado.
     </p>
-    <button class="btn-gestionar3">Gestionar</button>
+    <button class="btn-gestionar3"><a href="../html/modificarDoctor.html">Gestionar</a></button>
   </div>
-  <div class="circulo3-1"></div> -->
-  <!-- ******************************* -->
-  <!-- <div class="circulo4">
+  <div class="circulo3-1"></div>
+  
+   <div class="circulo4">
     <h5>Nefróloga</h5>
     <b>Ana Morales</b>
     <p>Información acerca del doctor:
@@ -129,11 +100,11 @@
       La doctora Ana Morales esta graduada de la  <br> Universidad Autónoma de Chiapas en la 
       <br> Especialidad Nefrología. Es una de las mejores doctoras del estado.
     </p>
-    <button class="btn-gestionar4">Gestionar</button>  
+    <button class="btn-gestionar4"><a href="../html/modificarDoctor.html">Gestionar</a></button>  
   </div>
-  <div class="circulo4-1"></div>-->
-  <!-- ********************************* -->
-  <!--  <div class="circulo5">
+  <div class="circulo4-1"></div>
+  
+    <div class="circulo5">
     <h5>Nutrióloga</h5>
     <b>Sofia García</b>
     <p>Información acerca del doctor:
@@ -141,15 +112,54 @@
       La doctora Sofia García esta graduada de la  <br> Universidad Autónoma de Chiapas en la 
       <br> Especialidad Nutrióloga. Es una de las mejores doctoras del estado.
     </p>
-    <button class="btn-gestionar5">Gestionar</button>
+    <button class="btn-gestionar5"><a href="../html/modificarDoctor.html">Gestionar</a></button>
   </div>
   <div class="circulo5-1"></div>
-  <div class="agregar"><a href="/formulario.html"><i class="fa-solid fa-circle-plus"></i></a></div>
--->
+  <button class="btn-abrir-ventanaE" id="btn-abrir-ventanaE"><a href="../html/modificarDoctor.html"><i class="fa-solid fa-circle-plus"></i></a></button> -->
 
+  
+
+      <div class="formulario" id="formulario">
+      <!-- <div class="popud" id="popud"> -->
+          <!-- <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a> -->
+            <h2 class="form-titulo">Modificar Doctor</h2>
+          <br>
+          <div class="controls">
+          <input type="text" placeholder="Nombre" id="name"> <input type="text" placeholder="Apellidos" id="apellidos" >
+          <br>
+          <br>
+          <input type="text" placeholder="Dirección" id="direccion"> <input type="text" placeholder="Telefono" id="tel">
+          <br>
+          <br>
+          <input type="email" placeholder="Correo" id="email">
+          <br>
+          <br>
+          <textarea placeholder="Información" id="info" class="info"> </textarea></div>      
+          
+          <br>
+          
+          <br>
+          <select id="esp" class="select-css">
+            <option >Seleccione una opción</option>
+            <option value="Odontología">Odontología</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Nutriologo">Nutriologo</option>
+            <option value="Neorocirujano">Neorocirujano</option>
+            <option value="Psicología">Psicología</option>
+            <option value="Dematología">Dermatología</option>
+            <option value="Nefrología">Nefrología</option>
+          </select>
+          <br><br><br>
+          <input accept="image/*" type="file" multiple id="img-doctor" class="btn btn-primary">
+          <br>
+          <input id="enviar"type="submit" placeholder="Enviar" class="btn btn-primary" onclick="registro()">
+      <!-- </div> -->
+      </div>
+         
 
 
 </main>
 
+<!-- <script src="../../src/js/ventanaE.js"></script> -->
 </body>
 </html>
