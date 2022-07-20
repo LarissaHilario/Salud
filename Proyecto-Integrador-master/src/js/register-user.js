@@ -57,7 +57,7 @@ function ingresar() {
     var userb = document.getElementById("user-gived").value;
     var passb = document.getElementById("pass-gived").value;
     if (userb != "" && passb != "") {
-        $query = `SELECT * FROM pacientes WHERE usuario = '${userb}' AND pass='${passb}'`;
+        $query = `SELECT * FROM pacientes WHERE usuario = BINARY '${userb}' AND pass= BINARY'${passb}'`;
         var tablaR = document.getElementById('tabla');
         conexion.query($query, function (err, rows, fields) {
             if (err) {
@@ -247,3 +247,53 @@ combobox1.addEventListener("change", (e) => {
 
 
 
+
+
+
+ function visualizarCitas(){
+    $query=`Select *from citasb;`;
+    var tablaR=document.getElementById("Tabla");
+    conexion.query($query,function(err,rows){
+    if(err){
+        console.log('Error en el query');
+        console.log(err);
+        return;
+    }
+    else{
+        var long =rows.length;
+        for(i=0; i<long; i++){
+            var newRow=tablaR.insertRow(-1);
+            var celdaId=newRow.insertCell(0);
+            var celdaDoctor=newRow.insertCell(1);
+            var celdaNombre=newRow.insertCell(2);
+            var celdaApellidoP=newRow.insertCell(3);
+            var celdaApellidoM=newRow.insertCell(4);
+            var celdaSexo=newRow.insertCell(5); 
+            var celdaFecha=newRow.insertCell(6);
+            var celdaHora=newRow.insertCell(7);
+            var textoId=document.createTextNode(rows[i].id_cita);
+            var textoNombre= document.createTextNode(rows[i].nombre);
+            var textoDoctor=document.createTextNode(rows[i].cita_doctor)
+            var textoApellidoP= document.createTextNode(rows[i].ap_p);
+            var textoApellidoM= document.createTextNode(rows[i].ap_m);
+            //var textoTelefono= document.createTextNode(rows[i].telefono);
+            var textoSexo= document.createTextNode(rows[i].sexo);
+            var textoFecha= document.createTextNode(rows[i].fecha);
+            var textoHorario= document.createTextNode(rows[i].horario);
+            
+            celdaId.appendChild(textoId); 
+            celdaDoctor.appendChild(textoDoctor);
+            celdaNombre.appendChild(textoNombre);
+            celdaApellidoP.appendChild(textoApellidoP);
+            celdaApellidoM.appendChild(textoApellidoM);
+            celdaSexo.appendChild(textoSexo);
+            celdaFecha.appendChild(textoFecha);
+            celdaHora.appendChild(textoHorario); 
+           
+        }
+    }
+  })
+  }
+  function refrescar(){
+  location.reload();
+  }

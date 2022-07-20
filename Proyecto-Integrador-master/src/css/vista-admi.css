@@ -294,3 +294,8 @@
     z-index: 3;
 }
 
+.col-md-5 button a{
+    text-decoration: none;
+    color: white;
+    }
+    

@@ -20,7 +20,7 @@ function registro() {
             }
             else {
                 alert("Médico registrado");
-                visualizar();
+                window.onload =visualizar();
                 /*let IdCounter=0;
                 IdCounter++;
                     const newMed = `
@@ -129,8 +129,8 @@ function visualizar() {
                 var height = window.innerHeight;
                 var x = Math.floor(Math.random() * width);
                 var y = Math.floor(Math.random() * height);
-                if (x > (width - 50)) x = width - 50;
-                if (y > (height - 50)) y = height - 50;
+                if (x > (width + 50)) x = width + 50;
+                if (y > (height + 50)) y = height + 50;
                 const newMed =
                     `
                     <br>
@@ -228,6 +228,7 @@ function deletemed(id, medicob) {
                 } else {
                     console.log("éxito", rows, fields);
                     alert("cambios realizados")
+                    visualizar();
 
                 }
             })

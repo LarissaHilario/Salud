@@ -22,7 +22,7 @@ function fechasValidar(){
     if(fecha_cita.length <=1){
         fecha_cita = "0" + fecha_cita;
     }
-    fecha_cita = año_cita+ "/" + mes_cita + "/" + fecha_cita;
+    fecha_cita = año_cita+ "-" + mes_cita + "-" + fecha_cita;
 
    
     var mes =(f.getMonth()+1).toString();
@@ -35,7 +35,7 @@ function fechasValidar(){
         dia = "0" + dia;
     }
 
-    fecha_actual= f.getFullYear() + "/" + mes + "/" + dia;
+    fecha_actual= f.getFullYear() + "-" + mes + "-" + dia;
     console.log(fecha_actual);
     console.log(fecha_cita);
 

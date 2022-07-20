@@ -6,7 +6,7 @@ function ingresar() {
     var passc= document.getElementById("passC").value;
     if (email != "" && pass != "" && passc!="") {
         if(pass==passc){
-        $query = `SELECT * FROM administradores WHERE email = '${email}' AND password='${pass}'`;
+        $query = `SELECT * FROM administradores WHERE email = BINARY '${email}' AND password= BINARY '${pass}'`;
         var tablaR = document.getElementById('tabla');
         conexion.query($query, function (err, rows, fields) {
             if (err) {
@@ -17,7 +17,7 @@ function ingresar() {
                 console.log("éxito", rows, fields);
 
                 if (rows.length == 0) {
-                    alert("no encontrado");
+                    alert("Usuario o contraseña incorrectos");
                 } else {
                     var cadena = '';
                     const long = rows.length;
