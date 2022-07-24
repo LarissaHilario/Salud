@@ -1,5 +1,8 @@
 var conexion = require('../../../conectar');
+
+//import{Arbol, arrayDatos} from 'arbol/arbolito1.js';
 const { off } = require('../../../conectar');
+//let arbol=new Arbol();
 const BotonSubir = document.getElementById("btnSubir");
 
 BotonSubir.addEventListener("click", () => {
@@ -115,9 +118,14 @@ function registrar_cita() {
     var numeroTelefonico = document.getElementById("numeroTelefonico").value;
     var correoElectronico = document.getElementById("correoElectronico").value;
     let idUsuario = localStorage.getItem("idUsuario");
-
-    if (OpcionClinica != "") {
-        $query = `INSERT INTO  citasb VALUES (0,6,'${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${horaCita}', '${fechaDada}')`;
+    const medico= document.getElementById("nombresDoctor").value;
+    console.log(medico);
+    const splitString = medico.split(" ");
+    console.log(splitString)
+    console.log(splitString [0])
+    //let id_medico= document.getElementById(nombresDoctor).value;
+    if (OpcionClinica != "") {  // añadir esto cuando resetees la base de datos ${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}', 
+        $query = `INSERT INTO  citasb VALUES (0,'${splitString[0]}','${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${horaCita}', '${fechaDada}')`;
         //resetear query //$query = `INSERT INTO  direccion VALUES ('${codigoPostal}','${calleDireccion}','${numeroDireccion}', 1)`;
         conexion.query($query, function (err) {
             if (err) {
@@ -148,31 +156,159 @@ function registrar_cita() {
 }
 
 
+let odontos= [];
+let psicos=[];
+let neumos=[];
+let neuros=[];
+let otorrinos=[];
+let cardis=[];
+let nefres=[];
+let dermas=[];
+let nutris=[];
 
 function visualizarDoctores() {
-    var tablaR = document.getElementById("tabla");
-    let nombre = [];
-    let apellido = [];
-    $query = 'Select *from doctores;';
+    psicologos();
+    odonto();
+    neumo();
+    nefre();
+    neuro();
+    otorrino();
+    cardi();
+    derma();
+    nutri();
+    
+    
+}
+function psicologos(){
+    $query = `Select *from doctores where esp='Psicología'`;
     conexion.query($query, function (err, rows) {
         if (err) {
-
         }
         else {
             console.log("Ejecutado correctamente", rows);
             var long = rows.length;
             for (i = 0; i < long; i++) {
-                nombre[i] = rows[i].nombre;
-                apellido[i] = rows[i].apellido;
-                console.log(nombre);
-                console.log(apell)
-                // var newRow = tablaR.insertRow(-1);
-                // var celdaId = newRow.insertCell(0);
-                // var celdaUsuario = newRow.insertCell(1);
-                // var textoId = document.createTextNode(rows[i].id);
-                // var textoUsuario = document.createTextNode(rows[i].name);
-                celdaId.appendChild(textoId);
-                celdaUsuario.appendChild(textoUsuario);
+                psicos.push(rows[i].id_medico + " "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+
+}
+function nutri(){
+    $query = `Select *from doctores where esp='Nutriologo'`; 
+
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                nutris.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+
+}
+
+
+function odonto(){
+    $query = `Select *from doctores where esp='Odontología'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                odontos.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+function neumo(){
+    $query = `Select *from doctores where esp='Neumólogo'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                neumos.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+
+function nefre(){
+    $query = `Select *from doctores where esp='Nefrología'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                nefres.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+
+function neuro(){
+    $query = `Select *from doctores where esp='Neurocirujano'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                neuros.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+
+function otorrino(){
+    $query = `Select *from doctores where esp='Otorrinolaringología'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                otorrinos.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+function cardi(){
+    $query = `Select *from doctores where esp='Cardiología'`; 
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                cardis.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
+            }
+        }
+    })
+}
+function derma(){
+    $query = `Select *from doctores where esp='Dematología'`;
+    conexion.query($query, function (err, rows) {
+        if (err) {
+        }
+        else {
+            console.log("Ejecutado correctamente", rows);
+            var long = rows.length;
+            for (i = 0; i < long; i++) {
+                dermas.push(rows[i].id_medico+" "+rows[i].nombre +" "+rows[i].apellidos)  
             }
         }
     })
@@ -181,9 +317,9 @@ function visualizarDoctores() {
 
 
 
-var especialidadDoctor = ["Odontólogo", "Psicólogo", "Neumólogo", "Neurocirujano", "Otorinolaringólogo", "Cardiólogo", "Nefrólogo", "Dermatólogo",];
+var especialidadDoctor = ["Odontólogo", "Nutriólogo", "Psicólogo", "Neumólogo", "Neurocirujano", "Otorinolaringólogo", "Cardiólogo", "Nefrólogo", "Dermatólogo",];
 
-var nombreDoctor = [
+/*var nombreDoctor = [
     "Vicentino Madero", "Javier Fernandez", "Genaro Cuesta", "Dolores Ballinas",
     "Maria Robles", "Alejandro Vazquez", "Valeria Muñoa", "Pedro Fernandez",
     "Roberto Guillén", "Ricardo Garza", "Diana Soto", "Gerardo Ruiz",
@@ -192,7 +328,7 @@ var nombreDoctor = [
     "Ana Robles", "Romeo Solis", "Salvador Reyes", "Antonio Figueroa",
     "Martin Estrada", "Celestino Martínez", "Roberto Meza", "Manuel Alegría",
     "Vanessa Clemente", "Alex Montiel", "Victor Herrera", "Fabiola Castillo",
-    "",];
+    "",];*/
 
 let combobox1 = document.getElementById("especiDoctor");
 let combobox2 = document.getElementById("nombresDoctor");
@@ -209,36 +345,40 @@ function llenarDepar() {
 }
 llenarDepar();
 
+var seleccion;
 combobox1.addEventListener("change", (e) => {
     let dato = e.target.value;
 
     switch (dato) {
         case "Odontólogo":
-            Recorrer(combobox2, nombreDoctor.slice(0, 4));
+            Recorrer(combobox2,odontos );
+            break;
+        case "Nutriólogo":
+            Recorrer(combobox2,nutris );
             break;
         case "Psicólogo":
-            Recorrer(combobox2, nombreDoctor.slice(4, 8));
+            Recorrer(combobox2,psicos);
             break;
         case "Neumólogo":
-            Recorrer(combobox2, nombreDoctor.slice(8, 12));
+            Recorrer(combobox2, neumos);
             break;
         case "Neurocirujano":
-            Recorrer(combobox2, nombreDoctor.slice(12, 16));
+            Recorrer(combobox2, neuros);
             break;
         case "Otorinolaringólogo":
-            Recorrer(combobox2, nombreDoctor.slice(16, 20));
+            Recorrer(combobox2, otorrinos);
             break;
         case "Cardiólogo":
-            Recorrer(combobox2, nombreDoctor.slice(20, 24));
+            Recorrer(combobox2, cardis);
             break;
         case "Nefrólogo":
-            Recorrer(combobox2, nombreDoctor.slice(24, 28));
+            Recorrer(combobox2, nefres);
             break;
         case "Dermatólogo":
-            Recorrer(combobox2, nombreDoctor.slice(28, 32));
+            Recorrer(combobox2, dermas);
             break;
-        case "Seleccione el doctor":
-            Recorrer(combobox2, nombreDoctor.slice(33, 35));
+        case "Seleccione la especialidad":
+            Recorrer(combobox2,"");
             break;
     }
 });
@@ -247,10 +387,7 @@ combobox1.addEventListener("change", (e) => {
 
 
 
-
-
-
- /*function visualizarCitas(){
+ function visualizarCitas(){
     $query=`Select *from citasb;`;
     var tablaR=document.getElementById("Tabla");
     conexion.query($query,function(err,rows){
@@ -280,7 +417,7 @@ combobox1.addEventListener("change", (e) => {
             var textoSexo= document.createTextNode(rows[i].sexo);
             var textoFecha= document.createTextNode(rows[i].fecha);
             var textoHorario= document.createTextNode(rows[i].horario);
-            
+            //arbol.add(rows[i].id_cita, rows[i]);
             celdaId.appendChild(textoId); 
             celdaDoctor.appendChild(textoDoctor);
             celdaNombre.appendChild(textoNombre);
@@ -296,4 +433,6 @@ combobox1.addEventListener("change", (e) => {
   }
   function refrescar(){
   location.reload();
-  }*/
+
+  }  
+  visualizarCitas(); 

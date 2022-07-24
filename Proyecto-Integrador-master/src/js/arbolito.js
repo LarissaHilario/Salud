@@ -1,16 +1,14 @@
+let datos= []; 
 class cita{
-  constructor(id,medico, nombre,apellidoP,apellidoM,sexo,fecha,hora) {
-    this.nombre = nombre
-    this.id = id
-    this.apellidoP=apellidoP;
-    this.apellidoM=apellidoM
-    this.sexo=sexo;
-    this.medico=medico,
-    this.fecha=fecha
-    this.hora=hora
-}
-    
-    
+    constructor(cita_doctor, nombre,ap_p,ap_m,sexo,fecha,horario){
+        this.cita_doctor=cita_doctor
+        this.nombre=nombre
+        this.ap_p=ap_p
+        this.ap_m=ap_m
+        this.sexo=sexo
+        this.fecha=fecha
+        this.horario=horario
+    }    
 }
 class Nodo {
     constructor (key,dat) {
@@ -20,7 +18,7 @@ class Nodo {
       this.dat=dat
     }
   }
-  
+ 
   class Tree {
     constructor () {
       this.raiz = null
@@ -118,9 +116,9 @@ class Nodo {
       this.inOrder(Nodo.left)
       console.log('KEY: '+Nodo.key+'\n',Nodo.dat)
       datos.push(Nodo)
-      id.push(Nodo.key) 
-      nombre.push(Nodo.dat.nombre)
-      apellido.push(Nodo.dat.apellidoP)
+      //id.push(Nodo.key)
+      //cantidades.push(Nodo.dat.cantidad)
+      //cuentaTotal.push(Nodo.dat.precioTotal)
       this.inOrder(Nodo.right)
       
     }
@@ -174,47 +172,7 @@ class Nodo {
   }
   
   var t = new Tree()
-  
-  /*t.agregar('Pino',new producto('1001',44,22))
-  t.agregar('Jabon ZOte',new producto('1002',44,1))
-  t.agregar('Escobas',new producto('1003',44,12))
-  t.agregar('Esponja',new producto('1004',44,7))
-  t.agregar('Suabitel',new producto('1005',44,5))
-  t.agregar('Ganchos',new producto('1006',44,3))
-  t.agregar('Vel rosita',new producto('1007',44,89))
-  t.agregar('Foca',new producto('1008',44,12))
-  t.agregar('Cloro',new producto('1009',44,78))
-  t.agregar('Fabuloso',new producto('1010',44,78))
-  t.agregar('Trapeador',new producto('1011',44,9))
-  t.agregar('Estropajo',new producto('1012',44,22))*/
-let datos= [];
-let id=[];
-let nombre=[];
-let apellido=[];
-
-  /*function agregarPedidoCompra() {
-    var nombre=document.getElementById("txt8").value;
-    var cantidadDeCompra=document.getElementById("txt9").value;
-    $query=`select *from productos where nombre ='${nombre}';`
-    console.log(nombre)
-    conexion.query($query, function (err, rows) {
-        if (err) {
-        console.log("error en el query");
-        console.log(err);
-        return;
-        }
-        else{
-            if (Number(cantidadDeCompra)<0) {
-                alert('No se acaptan cantidades negativas')
-                
-            }
-            else{ 
-                var totalCompra= Number(rows[0].precio_de_compra)*Number(cantidadDeCompra)
-                t.agregar(rows[0].nombre,new producto(rows[0].id_producto,cantidadDeCompra,totalCompra))                        
-            }
-        }});  
-  }*/
-  function visualizarCitas(){
+  function agregarCitas(){
     $query=`Select *from citasb;`;
     var tablaR=document.getElementById("Tabla");
     conexion.query($query,function(err,rows){
@@ -226,283 +184,59 @@ let apellido=[];
     else{
         var long =rows.length;
         for(i=0; i<long; i++){
-            var newRow=tablaR.insertRow(-1);
-            var celdaId=newRow.insertCell(0);
-            var celdaDoctor=newRow.insertCell(1);
-            var celdaNombre=newRow.insertCell(2);
-            var celdaApellidoP=newRow.insertCell(3);
-            var celdaApellidoM=newRow.insertCell(4);
-            var celdaSexo=newRow.insertCell(5); 
-            var celdaFecha=newRow.insertCell(6);
-            var celdaHora=newRow.insertCell(7);
-            var textoId=document.createTextNode(rows[i].id_cita);
-            var textoNombre= document.createTextNode(rows[i].nombre);
-            var textoDoctor=document.createTextNode(rows[i].cita_doctor)
-            var textoApellidoP= document.createTextNode(rows[i].ap_p);
-            var textoApellidoM= document.createTextNode(rows[i].ap_m);
-            //var textoTelefono= document.createTextNode(rows[i].telefono);
-            var textoSexo= document.createTextNode(rows[i].sexo);
-            var textoFecha= document.createTextNode(rows[i].fecha);
-            var textoHorario= document.createTextNode(rows[i].horario);
-            
-            celdaId.appendChild(textoId); 
-            celdaDoctor.appendChild(textoDoctor);
-            celdaNombre.appendChild(textoNombre);
-            celdaApellidoP.appendChild(textoApellidoP);
-            celdaApellidoM.appendChild(textoApellidoM);
-            celdaSexo.appendChild(textoSexo);
-            celdaFecha.appendChild(textoFecha);
-            celdaHora.appendChild(textoHorario); 
-            t.agregar(new cita(rows[0].id_cita,rows[1].cita_doctor,rows[2].nombre,rows[3].ap_p,rows[4].ap_m,
-              rows[5].sexo,rows[6].fecha,rows[7].horario))  
-           
+          t.agregar(rows[i].id_cita,new cita(rows[i].cita_doctor,rows[i].nombre,rows[i].ap_p,rows[i].ap_m,rows[i].sexo,rows[i].fecha,rows[i].horario))   
+          
         }
     }
+    verTabla();
   })
   }
-  function refrescar(){
-  location.reload();
-  }
+
   function verTabla() {
     t.inOrder()
-    let tablaR= document.getElementById("tabla");
-    verArrays();
-    //
+    console.log(t)
+    console.log(datos);
+    let tablaR= document.getElementById("Tabla");
     for(let i=0;i < datos.length;i++){
-        const button = document.createElement('button'); 
+      const button = document.createElement('button'); 
         button.type = 'button'; 
         button.innerText = 'Eliminar';
-        button.setAttribute('id',id[i]);
-        button.setAttribute('name',cantidades[i]) 
-        button.setAttribute('value',cuentaTotal[i])
+        button.setAttribute('id',datos[i].key);
         button.addEventListener('click',(event)=>{
-        event.target.parentNode.parentNode.remove()
-        t.borrar(event.target.id)
-        let index1= datos.indexOf(t.buscar(event.target.id))
-        datos.splice(index1,1)
-        console.log("elemento: "+t.buscar(event.target.id));
-        let index2= id.indexOf(event.target.id)
-        id.splice(index2,1)
-        let index3= cantidades.indexOf(event.target.name)
-        cantidades.splice(index3,1)
-        //let cantidad= document.getElementById(id[i]).value;
-        //console.log("inicio del for");
-        //let valor = event.target.value;
-        
-        console.log("Cantidad: "+index3);
-        cuentaTotal.splice(index3,1)
-        /*if (index4==-1) {
-          cuentaTotal.splice(index4+1,1)
-        }
-        else{
-          cuentaTotal.splice(index4,1)}*/
-        /*for(i=0;i<cuentaTotal.length;i++){
-           console.log("numero de i: "+i+" valir de la posicion: "+cuentaTotal[i]);
-           if(event.target.value==cantidad){
-            console.log(event.target.value+  " cantidad: "+cantidad);
-           }
-           console.log(event.target.value+  " cantidad: "+cantidad);
-        }*/
-       
-        /*let index4= cuentaTotal.indexOf(cantidad)
-        cuentaTotal.splice(index4-1,1)*/
-
-        /*console.log(" NOMBRE: "+event.target.id+" CANTIDAD: "+event.target.name+" PRECIO: "+cantidad);
-        console.log("lugar de total: "+index4)
-*/
-        verArrays();
-        //console.log("aqui abajo"+event.target.id+" valor 1: "+event.target.name+" valor 2:  "+event.target.value)
-         });
-        var newRow= tablaR.insertRow(-1);
-        var celdaProducto= newRow.insertCell(0);
-        var celdaCantidad= newRow.insertCell(1);
-        var celdaPrecio= newRow.insertCell(2);
-        var celdaCheck = newRow.insertCell(3);
-        var txtProducto=document.createTextNode(id[i])
-        var txtCantidad=document.createTextNode(cantidades[i])
-        var txtPrecio=document.createTextNode(cuentaTotal[i])
-        celdaProducto.appendChild(txtProducto);
-        celdaCantidad.appendChild(txtCantidad);
-        celdaPrecio.appendChild(txtPrecio); 
-        celdaCheck.appendChild(button);
+         
+      
+          event.target.parentNode.parentNode.remove()
+          t.borrar(event.target.id)//let borrar= t.buscar(event.target.id)
+         })
+      var newRow=tablaR.insertRow(-1);
+      var celdaId=newRow.insertCell(0);
+      var celdaDoctor=newRow.insertCell(1);
+      var celdaNombre=newRow.insertCell(2);
+      var celdaApellidoP=newRow.insertCell(3);
+      var celdaApellidoM=newRow.insertCell(4);
+      var celdaSexo=newRow.insertCell(5); 
+      var celdaFecha=newRow.insertCell(6);
+      var celdaHora=newRow.insertCell(7);
+      var celdaCheck = newRow.insertCell(8);
+      var textoId=document.createTextNode(datos[i].key); 
+      var textoDoctor=document.createTextNode(datos[i].dat.cita_doctor)
+      var textoNombre= document.createTextNode(datos[i].dat.nombre);
+      var textoApellidoP= document.createTextNode(datos[i].dat.ap_p);
+      var textoApellidoM= document.createTextNode(datos[i].dat.ap_m);
+      //var textoTelefono= document.createTextNode(rows[i].telefono);
+      var textoSexo= document.createTextNode(datos[i].dat.sexo);
+      var textoFecha= document.createTextNode(datos[i].dat.fecha);
+      var textoHorario= document.createTextNode(datos[i].dat.horario);
+      //arbol.add(rows[i].id_cita, rows[i]);
+      celdaId.appendChild(textoId); 
+      celdaDoctor.appendChild(textoDoctor);
+      celdaNombre.appendChild(textoNombre);
+      celdaApellidoP.appendChild(textoApellidoP);
+      celdaApellidoM.appendChild(textoApellidoM);
+      celdaSexo.appendChild(textoSexo);
+      celdaFecha.appendChild(textoFecha);
+      celdaHora.appendChild(textoHorario); 
+      celdaCheck.appendChild(button);
     }  
   }
- 
-  function comprar() {
-    let long= datos.length-1
-    let nombre;
-    let precio_de_Compra;
-    let cantidad_comprada;
-    let precio_total;
-    let id_producto
-    for (let i = 0; i <= long; i++) {
-      nombre = id[i]
-      $query=`select *from productos where nombre ='${id[i]}';`
-      conexion.query($query, function (err, rows) {
-      if (err) {
-      console.log("error en el query");
-      console.log(err);
-      return;
-      }
-      else{
-        nombre= rows[0].nombre
-        precio_de_Compra=Number(rows[0].precio_de_compra);
-        cantidad_comprada=Number(cantidades[i]);
-        precio_total= Number(cuentaTotal[i]);
-        id_producto= Number(rows[0].id_producto);
-        console.log(cantidad_comprada,precio_total)
-        $query=`INSERT INTO compra  (nombre,precio_de_compra,cantidad_comprada,precio_total,Compras_id_producto) 
-        VALUES ('${nombre}','${precio_de_Compra}','${cantidad_comprada}','${precio_total}','${id_producto}')`;
-        conexion.query($query, function (err) {
-        if (err) {
-        console.log("error en el query");
-        console.log(err);
-        return;
-        }
-        else { alert ("Datos guardados")
-          //nombre=id[i]
-          //comprar(nombre,cantidad_comprada)
-          $query=`select *from productos where nombre ='${id[i]}';`
-          let cantAnterior;
-          let total;
-          conexion.query($query, function (err, rows) {
-            if (err) {
-              console.log("error en el query");
-              console.log(err);
-            return;
-            }
-            else{
-            cantAnterior=Number(rows[0].cantidad);
-            total=cantAnterior+Number(cantidades[i]);
-            $query=`UPDATE productos SET cantidad = '${total}'
-            WHERE nombre ='${id[i]}';`
-            conexion.query($query, function (err) {
-            if (err) {
-              console.log("error en el query");
-              console.log(err);
-            return;
-              }
-            else{
-            console.log('actualizacion exitosa')
-            }
-        });}
-              
-          
-        })
-      }
-      }
-    )
-    }
-     })
-      //document.getElementById("tabla").deleteRow(1); 
-      //t.borrar(id[i])
-    };
-    //datos=[];
-    //id=[];
-    //cantidades=[];
-    //cuentaTotal=[];
-    setTimeout(recargarPagina=()=>{
-      location.reload();
-    },10000);
-}
 
-function vender() {
-  let long= datos.length-1
-  let nombre;
-  let precio_de_Venta;
-  let cantidad_vendida;
-  let precio_total;
-  let id_producto
-  for (let i = 0; i <= long; i++) {
-    nombre = id[i]
-    $query=`select *from productos where nombre ='${id[i]}';`
-    conexion.query($query, function (err, rows) {
-    if (err) {
-    console.log("error en el query");
-    console.log(err);
-    return;
-    }
-    else{
-      nombre= rows[0].nombre;
-      precio_de_Venta=Number(rows[0].precio_de_venta);
-      cantidad_vendida=Number(cantidades[i]);
-      precio_total= Number(cuentaTotal[i]);
-      id_producto= Number(rows[0].id_producto);
-      $query=`INSERT INTO venta  (nombre,precio_de_venta,cantidad_vendida,precio_total,productos_id_producto) 
-      VALUES ('${nombre}','${precio_de_Venta}','${cantidad_vendida}','${precio_total}','${id_producto}')`;
-      conexion.query($query, function (err) {
-      if (err) {
-      console.log("error en el query");
-      console.log(err);
-      return;
-      }
-      else { alert ("Datos guardados")
-        //nombre=id[i]
-        //comprar(nombre,cantidad_comprada)
-        console.log(id[i])
-        $query=`select *from productos where nombre ='${id[i]}';`
-        let cantAnterior;
-        let total;
-        conexion.query($query, function (err, rows) {
-          if (err) {
-            console.log("error en el query");
-            console.log(err);
-          return;
-          }
-          else{
-          cantAnterior=Number(rows[0].cantidad)
-          total=cantAnterior-Number(cantidades[i]);
-          $query=`UPDATE productos SET cantidad = '${total}'
-          WHERE nombre ='${id[i]}';`
-          conexion.query($query, function (err) {
-          if (err) {
-            console.log("error en el query");
-            console.log(err);
-          return;
-            }
-          else{
-          console.log('actualizacion exitosa: ')
-          console.log(cantAnterior+' '+total)
-          }
-      });}
-            
-        
-      })
-    }
-    }
-  )
-  }
-  })
- 
-  };
- 
-  setTimeout(recargarPagina=()=>{
-    location.reload();
-  },10000);
-}
-
-// function recargarPagina(){
-//   location.reload();
-// }
-function verArrays() {
-  console.log(datos)
-  console.log(id)
-  console.log(cantidades)
-  console.log(cuentaTotal)
-}
-
-
-
-      
-
-  
-
-  
-  /*console.log('\nVista PreOrden: \n')
-  t.preOrder()
-  console.log('\nVista InOrden: \n')
- t.inOrder()
- t.agregar('Jabon ZOte',new producto('1002',44,1))
- var x=t.buscar('Jabon ZOte')
- console.log(x.dat.Id)*/
-  

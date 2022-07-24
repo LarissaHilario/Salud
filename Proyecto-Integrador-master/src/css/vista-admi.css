@@ -241,14 +241,16 @@ body{
 .circulo1 p{
     
     font-family: 'Poppins';
+    text-align: center;
 }
 .circulo1 b{
-    
+    position: relative;
+    text-align: center;
     font-family: 'Poppins';
     font-size: 19px;
 }
 .circulo1 h5{
-   
+    text-align: left;
     font-family: 'Poppins';
     font-size: 16px;
 }
