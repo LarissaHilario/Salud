@@ -108,7 +108,30 @@ function deletemed(id, medicob) {
                     return;
                 }
                 else {
-                    let medToDelete = document.getElementById(id);
+                    var mensaje;
+                    var opcion = confirm("¿Seguro que desea eliminar?");
+                    if (opcion == true) {
+                        alert("Eliminado");
+                        let medToDelete = document.getElementById(id);
+                        div.removeChild(medToDelete);
+                        var long = rows.length;
+                        console.log("ejecutado correctamente", rows);
+                        $query = `set foreign_key_checks=1`;
+                        var tablaR = document.getElementById("Tabla2")
+                        conexion.query($query, function (err, rows) {
+                            if (err) {
+                                console.log("error en el query");
+                                console.log(err);
+                                return;
+                            }
+                            else {
+                                console.log("llaves activadas")
+                            }
+                        })
+                    } else {
+                        alert("Cancelado");
+                    }
+                    /*let medToDelete = document.getElementById(id);
                     div.removeChild(medToDelete);
                     var long = rows.length;
                     console.log("ejecutado correctamente", rows);
@@ -123,7 +146,7 @@ function deletemed(id, medicob) {
                         else {
                             console.log("llaves activadas")
                         }
-                    })
+                    })*/
                 }
             })
         }
