@@ -125,7 +125,7 @@ function registrar_cita() {
     console.log(splitString [0])
     //let id_medico= document.getElementById(nombresDoctor).value;
     if (OpcionClinica != "") {  // añadir esto cuando resetees la base de datos ${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}', 
-        $query = `INSERT INTO  citasb VALUES (0,'${splitString[0]}','${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}','${horaCita}', '${fechaDada}')`;
+        $query = `INSERT INTO  citas VALUES (0,'${splitString[0]}','${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}','${horaCita}', '${fechaDada}')`;
         //resetear query //$query = `INSERT INTO  direccion VALUES ('${codigoPostal}','${calleDireccion}','${numeroDireccion}', 1)`;
         conexion.query($query, function (err) {
             if (err) {
@@ -391,7 +391,7 @@ combobox1.addEventListener("change", (e) => {
 
 
  function visualizarCitas(){
-    $query=`Select *from citasb;`;
+    $query=`Select *from citas;`;
     var tablaR=document.getElementById("Tabla");
     conexion.query($query,function(err,rows){
     if(err){

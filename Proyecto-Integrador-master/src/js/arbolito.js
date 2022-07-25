@@ -173,7 +173,7 @@ class Nodo {
 
   var t = new Tree()
   function agregarCitas(){
-    $query=`Select *from citasb;`;
+    $query=`Select *from citas;`;
     var tablaR=document.getElementById("Tabla");
     conexion.query($query,function(err,rows){
     if(err){
@@ -182,9 +182,15 @@ class Nodo {
         return;
     }
     else{
-        var long =rows.length;
+        var long =rows.length; 
+        
         for(i=0; i<long; i++){
-          t.agregar(rows[i].id_cita,new cita(rows[i].id_medico,rows[i].nombre,rows[i].ap_p,rows[i].ap_m,rows[i].sexo,rows[i].fecha,rows[i].horario))   
+          let fechas= rows[i].fecha;
+          console.log(fechas);
+          let mes=(fechas.getMonth()<10)? '0'+fechas.getMonth(): fechas.getMonth();
+          let dia=(fechas.getDate()<10)?'0'+fechas.getDate(): fechas.getDate();
+          let fecha=`${fechas.getFullYear()}-${mes}-${dia}`;
+          t.agregar(rows[i].id_cita,new cita(rows[i].id_medico,rows[i].nombre,rows[i].ap_p,rows[i].ap_m,rows[i].sexo,fecha,rows[i].horario))
         }
     }
     verTabla();
