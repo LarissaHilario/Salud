@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <script src="https://kit.fontawesome.com/ca99133e94.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="../js/register-med.js"></script>
+</head>
+<body>
+    <div class="formulario" id="formulario">
+        <!-- <div class="popud" id="popud"> -->
+            <!-- <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a> -->
+              <h2 class="form-titulo">Modificar Doctor</h2>
+            <br>
+            <div class="controls">
+            <input type="text" placeholder="Nombre" id="name"> <input type="text" placeholder="Apellidos" id="apellidos" >
+            <br>
+            <br>
+            <input type="text" placeholder="Dirección" id="direccion"> <input type="text" placeholder="Telefono" id="tel">
+            <br>
+            <br>
+            <input type="email" placeholder="Correo" id="email">
+            <br>
+            <br>
+            <textarea placeholder="Información" id="info" class="info"> </textarea></div>      
+            <br>
+            
+            <br>
+            <select id="esp" class="select-css">
+              <option >Seleccione una opción</option>
+              <option value="Odontología">Odontología</option>
+              <option value="Cardiología">Cardiología</option>
+              <option value="Nutrición">Nutrición</option>
+              <option value="Otorrinolaringología ">Otorrinolaringología</option>
+              <option value="Neurocirujano">Neurocirujano</option>
+              <option value="Psicología">Psicología</option>
+              <option value="Dermatología">Dermatología</option>
+              <option value="Nefrología">Nefrología</option>
+            </select>
+            <br><br><br>
+            <input accept="image/*" type="file" multiple id="img-doctor" class="btn btn-primary">
+            <br>
+            <input id="enviar"type="submit" placeholder="Enviar" class="btn btn-primary" onclick="registro()">
+        <!-- </div> -->
+        </div>
+</body>
+</html>
+

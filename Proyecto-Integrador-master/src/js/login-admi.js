@@ -1,3 +1,4 @@
+
 var conexion = require('../../../conectar');
 
 function ingresar() {
@@ -22,7 +23,7 @@ function ingresar() {
                     var cadena = '';
                     const long = rows.length;
                     for (let i = 0; i < long; i++) {
-                        alert("Bienvenido " + rows[i].user);
+                        alert("Bienvenido  " + rows[i].user);
                     window.location.assign("../../src/html/vista-admi.html");
                         cadena += element.user + " " + element.pass + "\n";
 

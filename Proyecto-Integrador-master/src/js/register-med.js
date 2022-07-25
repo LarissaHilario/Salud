@@ -1,3 +1,4 @@
+
 var conexion = require('../../../conectar');
 
 
@@ -19,8 +20,7 @@ function registro() {
                 return;
             }
             else {
-                alert("Médico registrado");
-                window.onload =visualizar();
+                alert("Médico registrado")
             }
         })
     }
@@ -47,24 +47,30 @@ function visualizar() {
                 var y = Math.floor(Math.random() * height);
                 if (x > (width + 50)) x = width + 50;
                 if (y > (height + 50)) y = height + 50;
+                const originalString = rows[i].image;
+                // Replace the first instance of "How" with "Where"
+                const newImg = originalString.replace("C:fakepath", "");
+                console.log(newImg);
                 const newMed =
                     `
                     <br>
                     <br>
                     <div class="circulo1" id="${rows[i].id_medico}">
-                    <b> ${rows[i].nombre}</b>
-                    <b>${rows[i].apellidos}</b>
-                    <p>Información acerca del doctor:
+                    <b style="padding-left: 32%; padding-top: 20%;"> ${rows[i].nombre}</b>
+                    <b id="ba">${rows[i].apellidos}</b>
+                    <p  style="padding-left: 60%; padding-top: 5%;">Información acerca del doctor:
                     <br><br>    
                     ${rows[i].info}
                     </p>
                     <h5>${rows[i].esp}</h5>
-                    <img src="../../src/images/${rows[i].image}" style="width:100%">
-                    <button class="btn-gestionar" onClick="deletemed(${rows[i].id_medico})">Borrar</button>
-                    <br> <br>
-                    <button class="btn-gestionar"  onclick="modificar(${rows[i].id_medico})">Editar</button>
+                    <br>
+                    <img src="../../src/images/${newImg}" style="position:flex; top:50%">
+                    <button class="btn-gestionar"onClick="deletemed(${rows[i].id_medico})">Borrar</button>
+                    <br>
+                    <button class="btn-modificar"  onclick="modificar(${rows[i].id_medico})">Editar</button>
                     <br>
                     <br>
+                    
                     </div>`;
                 div.style.position = 'absolute';
                 div.style.left = '25%';
@@ -73,8 +79,8 @@ function visualizar() {
                 div.y = y;
                 div.innerHTML += newMed;
                 //return div;
-
             }
+            
         }
     })
 }

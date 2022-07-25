@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@100;400&family=Roboto:wght@100;400&display=swap');
-
+*{
+    box-sizing: border-box;
+}
 .btn a{
     text-decoration: none;
   }
@@ -153,109 +155,50 @@ body{
   }
 
 .circulo1{
-    
     background-color: #e8e8e8;
     width: 1050px;
     height: 300px;
     border-radius: 36px 36px 36px 36px; 
 }
 .circulo1-1{
-   
+    padding-top: 40px;
+    z-index: 1;
     background-color: #aaaaaa;
     width: 220px;
     height: 240px;
     border-radius: 36px 36px 36px 36px; 
 }
-.circulo2{
-    position: absolute;
-    left: 10%;
-    top: 75%;
-    background-color: #e8e8e8;
-    width: 1050px;
-    height: 300px;
-    border-radius: 36px 36px 36px 36px; 
-}
-.circulo2-1{
-    position: absolute;
-    left: 13%;
-    top: 78.7%;
-    background-color: #aaaaaa;
-    width: 220px;
-    height: 240px;
-    border-radius: 36px 36px 36px 36px; 
-}
-.circulo3{
-    position: absolute;
-    left: 10%;
-    top: 115%;
-    background-color: #e8e8e8;
-    width: 1050px;
-    height: 300px;
-    border-radius: 36px 36px 36px 36px; 
-}
-.circulo3-1{
-    position: absolute;
-    left: 13%;
-    top: 118.7%;
-    background-color: #aaaaaa;
-    width: 220px;
-    height: 240px;
-    border-radius: 36px 36px 36px 36px; 
-}
-.circulo4{
-    position: absolute;
-    left: 10%;
-    top: 155%;
-    background-color: #e8e8e8;
-    width: 1050px;
-    height: 300px;
-    border-radius: 36px 36px 36px 36px;
-}
-.circulo4-1{
-    position: absolute;
-    left: 13%;
-    top: 158.7%;
-    background-color: #aaaaaa;
-    width: 220px;
-    height: 240px;
-    border-radius: 36px 36px 36px 36px; 
-}
-.circulo5{
-    position: absolute;
-    left: 10%;
-    top: 195%;
-    background-color: #e8e8e8;
-    width: 1050px;
-    height: 300px;
-    border-radius: 36px 36px 36px 36px;
-}
-.circulo5-1{
-    position: absolute;
-    left: 13%;
-    top: 198.7%;
-    background-color: #aaaaaa;
-    width: 220px;
-    height: 240px;
-    border-radius: 36px 36px 36px 36px; 
-}
+
 .circulo1 p{
-    
+    top: 10%;
+    left: 59%;
     font-family: 'Poppins';
     text-align: center;
 }
 .circulo1 b{
-    position: relative;
     text-align: center;
+    align-items: center;
+    top: 42%;
+    left: 32%;
     font-family: 'Poppins';
     font-size: 19px;
 }
 .circulo1 h5{
-    text-align: left;
+  margin-top: -20%;
+  margin-left: 33%;
+   
     font-family: 'Poppins';
     font-size: 16px;
 }
+.circulo1 img{
+
+    width: 220px;
+    height: 240px;
+    max-width: 100%;
+    max-height: 100%;
+}
 .btn-gestionar{
-    
+    margin-left: 67.3%;;
     cursor: pointer;
     border-radius: 5px;
     border: none;
@@ -270,7 +213,21 @@ body{
     text-decoration: none;
     color: white;
 }
-    
+.btn-modificar{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    width: 15%;
+    height: 12%;
+    font-family: 'Poppins', 'Regular';
+    color: white;
+    background-color: #033076;
+}
+.btn-modificar a{
+    text-decoration: none;
+    color: white;
+}
 
 .circulo2 p{
     position: absolute;

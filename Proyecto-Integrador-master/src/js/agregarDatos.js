@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 var conexion = require('../../../conectar');
 
 function registrar(){
@@ -19,7 +21,7 @@ var Correo=document.getElementById("correo").value;
             return;
         }
         else{
-            alert ("datos guardados")
+            swal ("Registro exitoso")
         }
     })}
     location.reload();

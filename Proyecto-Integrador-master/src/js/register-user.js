@@ -125,7 +125,7 @@ function registrar_cita() {
     console.log(splitString [0])
     //let id_medico= document.getElementById(nombresDoctor).value;
     if (OpcionClinica != "") {  // añadir esto cuando resetees la base de datos ${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}', 
-        $query = `INSERT INTO  citasb VALUES (0,'${splitString[0]}','${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${horaCita}', '${fechaDada}')`;
+        $query = `INSERT INTO  citasb VALUES (0,'${splitString[0]}','${nombreDado}','${ApellidoP}','${ApellidoM}','${options}','${fechaNacimiento}','${numeroTelefonico}','${correoElectronico}','${horaCita}', '${fechaDada}')`;
         //resetear query //$query = `INSERT INTO  direccion VALUES ('${codigoPostal}','${calleDireccion}','${numeroDireccion}', 1)`;
         conexion.query($query, function (err) {
             if (err) {
@@ -135,6 +135,9 @@ function registrar_cita() {
             }
             else {
                 alert("Cita registrada")
+                localStorage.setItem("FechaCita", fechaDada);
+                localStorage.setItem("HoraCita", horaCita);
+                localStorage.setItem("medico", splitString [1], splitString [2]);
                 console.log(idUsuario)
                 $query = `INSERT INTO  direccion VALUES ('${codigoPostal}','${calleDireccion}','${numeroDireccion}', '${idUsuario}')`;
                 conexion.query($query, function (err) {
@@ -195,7 +198,7 @@ function psicologos(){
 
 }
 function nutri(){
-    $query = `Select *from doctores where esp='Nutriologo'`; 
+    $query = `Select *from doctores where esp='Nutriólogo'`; 
 
     conexion.query($query, function (err, rows) {
         if (err) {
@@ -300,7 +303,7 @@ function cardi(){
     })
 }
 function derma(){
-    $query = `Select *from doctores where esp='Dematología'`;
+    $query = `Select *from doctores where esp='Dermatología'`;
     conexion.query($query, function (err, rows) {
         if (err) {
         }

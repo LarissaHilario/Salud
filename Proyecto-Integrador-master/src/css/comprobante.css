@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+
+
+body{
+    background: #f7f7f8;
+}
+.title{
+    font-family: 'Antonio';
+    font-size: 30px;
+    margin-top: 35px;
+    text-align: center;
+}
+.font{
+    font-family: 'Roboto Flex';
+
+}
+
+.logo-clinica{
+    position: relative;
+    left: 48%;
+    max-width: 90%;
+    max-height: 90%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+}
+.div-info{
+    font-family: 'Roboto Flex';
+    position: relative;
+    left: 20%;
+
+}
+.confirma-cita{
+    position: relative;
+    left: 22%;
+    font-size: 20px;
+
+}
+.center{
+    font-family: 'Roboto Flex';
+    text-align: center;
+}

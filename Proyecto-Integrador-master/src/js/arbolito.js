@@ -1,7 +1,7 @@
 let datos= []; 
 class cita{
-    constructor(cita_doctor, nombre,ap_p,ap_m,sexo,fecha,horario){
-        this.cita_doctor=cita_doctor
+    constructor(id_medico, nombre,ap_p,ap_m,sexo,fecha,horario){
+        this.id_medico=id_medico
         this.nombre=nombre
         this.ap_p=ap_p
         this.ap_m=ap_m
@@ -170,7 +170,7 @@ class Nodo {
       return aux
     }
   }
-  
+
   var t = new Tree()
   function agregarCitas(){
     $query=`Select *from citasb;`;
@@ -184,13 +184,25 @@ class Nodo {
     else{
         var long =rows.length;
         for(i=0; i<long; i++){
-          t.agregar(rows[i].id_cita,new cita(rows[i].cita_doctor,rows[i].nombre,rows[i].ap_p,rows[i].ap_m,rows[i].sexo,rows[i].fecha,rows[i].horario))   
-          
+          t.agregar(rows[i].id_cita,new cita(rows[i].id_medico,rows[i].nombre,rows[i].ap_p,rows[i].ap_m,rows[i].sexo,rows[i].fecha,rows[i].horario))   
         }
     }
     verTabla();
   })
   }
+
+  const obtenerfecha=()=>{
+    let date=new Date();    
+    let mes=date.getMonth();
+    let dia=date.getDate();
+    let year = date.getFullYear();
+    // let fecha=`'${date.getFullYear()}-${mes}-${dia}'`;
+    document.getElementById(datos[i].dat.fecha).innerHTML=(dia + " de " + nombrarMeses[mes] + " del " + year);
+}
+
+const nombrarMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+];
 
   function verTabla() {
     t.inOrder()
@@ -219,7 +231,7 @@ class Nodo {
       var celdaHora=newRow.insertCell(7);
       var celdaCheck = newRow.insertCell(8);
       var textoId=document.createTextNode(datos[i].key); 
-      var textoDoctor=document.createTextNode(datos[i].dat.cita_doctor)
+      var textoDoctor=document.createTextNode(datos[i].dat.id_medico)
       var textoNombre= document.createTextNode(datos[i].dat.nombre);
       var textoApellidoP= document.createTextNode(datos[i].dat.ap_p);
       var textoApellidoM= document.createTextNode(datos[i].dat.ap_m);
